@@ -1,0 +1,10 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["6H6X5D4LRN.app.tahaddi.jeu"],
+        "components": [{ "/": "/s/*", "comment": "invitation à un Salon : ouvre l'appli sur la partie" }]
+      }
+    ]
+  }
+}

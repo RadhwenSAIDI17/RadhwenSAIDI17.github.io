@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tahaddi — rejoins la partie</title>
+<meta name="description" content="Tes amis t'attendent sur Tahaddi, le jeu de société entre amis. Installe l'appli et entre le code de la partie.">
+<!-- iPhone : la bannière officielle d'Apple « Obtenir / Ouvrir » ; si l'appli est installée, elle s'ouvre sur cette partie -->
+<meta name="apple-itunes-app" content="app-id=6839650430, app-argument=https://radhwensaidi17.github.io/s/">
+<meta name="theme-color" content="#F7F5FF">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<style>
+  :root { --bg: #F7F5FF; --ink: #15112b; --muted: #5d5878; --accent: #6a4cff; --accent2: #c2409a; --card: rgba(255,255,255,.78); --line: rgba(255,255,255,.95); }
+  @media (prefers-color-scheme: dark) { :root { --bg: #0F0B1F; --ink: #F4F1FF; --muted: #b3acd6; --accent: #9d8bff; --accent2: #f06bbf; --card: rgba(30,24,60,.72); --line: rgba(255,255,255,.14); color-scheme: dark; } }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    font: 16px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Arabic", sans-serif; color: var(--ink);
+    background: radial-gradient(60% 40% at 15% 10%, rgba(106,76,255,.22), transparent 70%), radial-gradient(50% 40% at 90% 30%, rgba(194,64,154,.18), transparent 70%), radial-gradient(60% 50% at 50% 100%, rgba(94,240,196,.18), transparent 70%), var(--bg);
+    display: flex; align-items: center; justify-content: center;
+    padding: max(24px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  main { width: 100%; max-width: 420px; display: grid; gap: 18px; text-align: center; }
+  .card { background: var(--card); backdrop-filter: blur(20px) saturate(1.5); -webkit-backdrop-filter: blur(20px) saturate(1.5); border: 1.5px solid var(--line); border-radius: 32px; padding: 28px 22px; box-shadow: 0 26px 50px -26px rgba(50,30,130,.45); display: grid; gap: 16px; justify-items: center; }
+  .logo { width: 84px; height: 84px; border-radius: 22px; box-shadow: 0 14px 30px -14px rgba(50,30,130,.6); }
+  h1 { margin: 0; font-size: 1.6rem; line-height: 1.15; letter-spacing: -.02em; text-wrap: balance; }
+  .lead { margin: 0; color: var(--muted); text-wrap: pretty; }
+  .code { font-size: 3.2rem; font-weight: 800; letter-spacing: .22em; padding-left: .22em; color: var(--accent); font-variant-numeric: tabular-nums; direction: ltr; }
+  .row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .btn { appearance: none; border: 0; cursor: pointer; text-decoration: none; font: inherit; font-weight: 700; border-radius: 999px; padding: 14px 26px; display: inline-flex; align-items: center; gap: 10px; justify-content: center; }
+  .btn-main { color: #fff; background: linear-gradient(110deg, var(--accent), var(--accent2)); box-shadow: 0 14px 28px -14px rgba(90,47,196,.8), inset 0 2px 0 rgba(255,255,255,.35); font-size: 1.1rem; padding: 16px 30px; }
+  .btn-soft { color: var(--ink); background: var(--card); border: 1.5px solid var(--line); }
+  .steps { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; text-align: start; color: var(--muted); font-size: .95rem; }
+  .steps b { color: var(--ink); }
+  .steps li { display: flex; gap: 10px; align-items: baseline; }
+  .steps .n { flex: none; width: 1.6em; height: 1.6em; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: .85rem; font-weight: 800; color: #fff; background: linear-gradient(135deg, var(--accent), var(--accent2)); }
+  .foot { font-size: .8rem; color: var(--muted); }
+  .foot a { color: inherit; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <section class="card">
+    <img class="logo" src="/icon.svg" alt="" width="84" height="84">
+    <h1 id="title">Tes amis t’attendent sur Tahaddi</h1>
+    <p class="lead" id="lead">Installe l’appli, puis entre ce code pour rejoindre la partie :</p>
+    <div class="code" id="code" aria-live="polite">— — — —</div>
+    <div class="row">
+      <button class="btn btn-soft" id="copy" type="button">Copier le code</button>
+    </div>
+    <a class="btn btn-main" id="store-ios" href="https://apps.apple.com/app/id6839650430" hidden>Installer Tahaddi</a>
+    <a class="btn btn-main" id="store-android" href="https://play.google.com/store/apps/details?id=app.tahaddi.jeu" hidden>Installer Tahaddi</a>
+    <div class="row" id="store-both" hidden>
+      <a class="btn btn-main" href="https://apps.apple.com/app/id6839650430">App Store</a>
+      <a class="btn btn-main" href="https://play.google.com/store/apps/details?id=app.tahaddi.jeu">Google Play</a>
+    </div>
+    <a class="btn btn-soft" id="open-android" href="#" hidden>Déjà installée ? Ouvrir l’appli</a>
+  </section>
+  <ol class="steps" id="steps">
+    <li><span class="n">1</span><span id="s1">Installe <b>Tahaddi</b> (gratuit, sans compte, sans pub).</span></li>
+    <li><span class="n">2</span><span id="s2">Ouvre l’appli et touche <b>«&nbsp;Rejoindre une partie&nbsp;»</b>.</span></li>
+    <li><span class="n">3</span><span id="s3">Entre le code : tu es dans la partie !</span></li>
+  </ol>
+  <p class="foot"><a href="/confidentialite" id="privacy">Confidentialité</a> · <a href="/aide" id="help">Aide</a></p>
+</main>
+<script>
+  // Les identifiants des fiches App Store et Google Play sont posés par scripts/build-site.ts (voir docs/MISE-EN-PROD.md).
+  var APP_ID = 'app.tahaddi.jeu';
+  var T = {
+    fr: { title: "Tes amis t’attendent sur Tahaddi", titleHost: "{n} t’invite sur Tahaddi", lead: "Installe l’appli, puis entre ce code pour rejoindre la partie :", copy: 'Copier le code', copied: 'Code copié ✓', install: 'Installer Tahaddi', open: "Déjà installée ? Ouvrir l’appli", s1: 'Installe <b>Tahaddi</b> (gratuit, sans compte, sans pub).', s2: "Ouvre l’appli et touche <b>«&nbsp;Rejoindre une partie&nbsp;»</b>.", s3: 'Entre le code : tu es dans la partie !', privacy: 'Confidentialité', help: 'Aide', bad: 'Ce lien ne contient pas de code de partie. Demande le code à tes amis.' },
+    ar: { title: 'أصدقاؤك ينتظرونك في تحدّي', titleHost: '{n} يدعوك إلى تحدّي', lead: 'ثبّت التطبيق ثم أدخل هذا الرمز للانضمام إلى اللعبة:', copy: 'نسخ الرمز', copied: 'تم نسخ الرمز ✓', install: 'ثبّت تحدّي', open: 'مثبّت مسبقًا؟ افتح التطبيق', s1: 'ثبّت <b>تحدّي</b> (مجاني، بلا حساب، بلا إعلانات).', s2: 'افتح التطبيق واضغط <b>«الانضمام إلى لعبة»</b>.', s3: 'أدخل الرمز: أنت في اللعبة!', privacy: 'الخصوصية', help: 'مساعدة', bad: 'هذا الرابط لا يحتوي على رمز لعبة. اطلب الرمز من أصدقائك.' },
+    en: { title: 'Your friends are waiting on Tahaddi', titleHost: '{n} invites you to Tahaddi', lead: 'Install the app, then enter this code to join the game:', copy: 'Copy the code', copied: 'Code copied ✓', install: 'Install Tahaddi', open: 'Already installed? Open the app', s1: 'Install <b>Tahaddi</b> (free, no account, no ads).', s2: 'Open the app and tap <b>“Join a game”</b>.', s3: 'Enter the code: you are in!', privacy: 'Privacy', help: 'Help', bad: 'This link has no game code. Ask your friends for the code.' },
+  };
+  var nav = (navigator.language || 'fr').slice(0, 2);
+  var lang = T[nav] ? nav : 'fr';
+  var L = T[lang];
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  var $ = function (id) { return document.getElementById(id); };
+  var m = location.pathname.match(/\/s\/([A-Za-z]{4})\/?$/) || location.hash.match(/salon\/([A-Za-z]{4})/);
+  var code = m ? m[1].toUpperCase() : '';
+  var host = (new URLSearchParams(location.search).get('h') || '').trim().slice(0, 24);
+  $('title').textContent = host ? L.titleHost.replace('{n}', host) : L.title;
+  $('lead').textContent = code ? L.lead : L.bad;
+  $('code').textContent = code || '— — — —';
+  $('copy').textContent = L.copy;
+  $('copy').hidden = !code;
+  $('s1').innerHTML = L.s1; $('s2').innerHTML = L.s2; $('s3').innerHTML = L.s3;
+  $('privacy').textContent = L.privacy; $('help').textContent = L.help;
+  // l'appli ouverte par la bannière d'Apple reçoit l'adresse de cette partie
+  var banner = document.querySelector('meta[name="apple-itunes-app"]');
+  if (banner && code) banner.setAttribute('content', banner.getAttribute('content') + code);
+  var ua = navigator.userAgent;
+  var ios = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var android = /Android/.test(ua);
+  var show = ios ? 'store-ios' : android ? 'store-android' : 'store-both';
+  $(show).hidden = false;
+  $('store-ios').textContent = L.install; $('store-android').textContent = L.install;
+  if (android && code) {
+    // Android : si l'appli est là, ce lien l'ouvre sur la partie ; sinon, Google Play
+    var o = $('open-android');
+    o.textContent = L.open;
+    o.href = 'intent://' + location.host + '/s/' + code + '#Intent;scheme=https;package=' + APP_ID + ';S.browser_fallback_url=' + encodeURIComponent('https://play.google.com/store/apps/details?id=app.tahaddi.jeu') + ';end';
+    o.hidden = false;
+  }
+  $('copy').addEventListener('click', function () {
+    var done = function () { $('copy').textContent = L.copied; setTimeout(function () { $('copy').textContent = L.copy; }, 2200); };
+    var select = function () { var r = document.createRange(); r.selectNodeContents($('code')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+    // si le presse-papiers refuse, on sélectionne le code : il reste à le copier à la main
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(code).then(done, select);
+    else select();
+  });
+</script>
+</body>
+</html>

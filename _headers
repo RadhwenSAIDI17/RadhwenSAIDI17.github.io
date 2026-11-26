@@ -1,0 +1,5 @@
+# Les fichiers des liens universels (iPhone) et des App Links (Android) doivent être servis en JSON
+/.well-known/apple-app-site-association
+  Content-Type: application/json
+/.well-known/assetlinks.json
+  Content-Type: application/json

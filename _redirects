@@ -1,0 +1,4 @@
+# Cloudflare Pages : l'invitation d'un Salon (QR) → la page d'invitation, qui propose d'installer l'appli
+/s/*            /invite.html          200
+/confidentialite /confidentialite.html 200
+/aide           /aide.html            200
